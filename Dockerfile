@@ -2,7 +2,7 @@ FROM jenkinsci/jenkins:2.30
 
 USER root
 RUN apt-get update \
-      && apt-get install -y sudo \
+      && apt-get install -y build-essential php5-cli php5-curl sudo \
       && rm -rf /var/lib/apt/lists/*
 RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
 USER jenkins
