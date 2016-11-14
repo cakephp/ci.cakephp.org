@@ -7,12 +7,12 @@ A Dokku-deployable Jenkins server, preconfigured with a number of plugins and ac
 On the Dokku server:
 
 ```shell
+# create the app
+dokku apps:create ci
+
 # create requisite persistent storage
 mkdir -p /var/lib/dokku/data/storage/ci
 chown 32767:32767 /var/lib/dokku/data/storage/ci
-
-# create the app
-dokku apps:create ci
 
 # mount the storage, docker socket, and docker binary
 dokku storage:mount ci /var/lib/dokku/data/storage/ci:/var/jenkins_home
