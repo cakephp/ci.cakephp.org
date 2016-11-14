@@ -13,6 +13,7 @@ chown 32767:32767 /var/lib/dokku/data/storage/ci
 
 # create the app
 dokku apps:create ci
+
 # mount the storage, docker socket, and docker binary
 dokku storage:mount ci /var/lib/dokku/data/storage/ci:/var/jenkins_home
 dokku storage:mount ci /var/run/docker.sock:/var/run/docker.sock
