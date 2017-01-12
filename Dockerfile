@@ -9,7 +9,7 @@ ARG gid=1000
 USER root
 COPY packages.txt /usr/share/jenkins/ref/
 RUN apt-get update \
-      && apt-get install -y $(cat packages.txt) \
+      && apt-get install -y $(cat /usr/share/jenkins/ref/packages.txt) \
       && rm -rf /var/lib/apt/lists/*
 RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
 
