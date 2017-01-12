@@ -1,5 +1,10 @@
 FROM jenkinsci/jenkins:2.40
 
+ARG user=jenkins
+ARG group=jenkins
+ARG uid=1000
+ARG gid=1000
+
 USER root
 RUN apt-get update \
       && apt-get install -y build-essential php5-cli php5-curl sudo \
