@@ -1,4 +1,4 @@
-FROM jenkinsci/jenkins:2.39
+FROM jenkinsci/jenkins:2.40
 
 USER root
 RUN apt-get update \
