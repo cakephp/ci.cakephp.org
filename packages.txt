@@ -1,0 +1,4 @@
+build-essential
+php5-cli
+php5-curl
+sudo
