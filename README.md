@@ -14,6 +14,9 @@ dokku apps:create ci
 mkdir -p /var/lib/dokku/data/storage/ci
 chown 32767:32767 /var/lib/dokku/data/storage/ci
 
+# add extra system packages
+dokku config:set ci SYSTEM_PACKAGES=build-essential,sudo
+
 # mount the storage, docker socket, and docker binary
 dokku storage:mount ci /var/lib/dokku/data/storage/ci:/var/jenkins_home
 dokku storage:mount ci /var/run/docker.sock:/var/run/docker.sock
