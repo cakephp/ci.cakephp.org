@@ -12,7 +12,7 @@ dokku apps:create ci
 
 # create requisite persistent storage
 mkdir -p /var/lib/dokku/data/storage/ci
-chown 32767:32767 /var/lib/dokku/data/storage/ci
+chown 1000:1000 /var/lib/dokku/data/storage/ci
 
 # add extra system packages
 dokku config:set ci SYSTEM_PACKAGES=build-essential,sudo
