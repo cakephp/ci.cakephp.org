@@ -1,4 +1,4 @@
-FROM jenkinsci/jenkins:2.189
+FROM jenkins/jenkins:2.189
 
 ARG user=jenkins
 ARG group=jenkins
