@@ -35,3 +35,13 @@ git remote add dokku dokku@SERVER_IP:ci
 # push the app
 git push dokku master
 ```
+
+# Dumping `plugins.txt`
+
+```groovy
+List<String> jenkinsPlugins = new ArrayList<String>(Jenkins.instance.pluginManager.plugins);
+jenkinsPlugins.sort { it.displayName }
+              .each { plugin ->
+                   println ("${plugin.shortName}:${plugin.version}")
+              }
+```
